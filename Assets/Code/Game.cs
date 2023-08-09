@@ -30,7 +30,12 @@ public class Game : MonoBehaviour
         EventBus.finishGame -= Finished;
         EventBus.catchPoint -= CatchPoint;
     }
-    
+
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.Escape))
+            Application.Quit();
+    }
 
     public void Started()
     {

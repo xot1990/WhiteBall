@@ -5,7 +5,7 @@ using UnityEngine;
 public class ball : MonoBehaviour
 {
 
-    public float spawnTime = 0.05f;
+    public float spawnTime = 0.03f;
     public GameObject spawnObj;
     public Rigidbody2D body;
     public int currentNum;
@@ -51,7 +51,7 @@ public class ball : MonoBehaviour
         {
             if (isPresh)
             {
-                body.AddForce(Vector2.up * 10, ForceMode2D.Force);
+                body.AddForce(Vector2.up * 1500 * Time.deltaTime, ForceMode2D.Force );
             }
 
             spawnTime -= Time.deltaTime;
@@ -62,7 +62,7 @@ public class ball : MonoBehaviour
 
                 Pool.CometPool[currentNum].SetActive(true);
                 Pool.CometPool[currentNum].transform.position = transform.position;
-                spawnTime += 0.05f;
+                spawnTime += 0.03f;
                 currentNum++;
             }
         }
